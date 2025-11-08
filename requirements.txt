@@ -1,3 +1,8 @@
 sqlalchemy
 pandas
 pymysql
+dotenv
+seaborn
+matplotlib
+numpy
+scipy

@@ -36,15 +36,8 @@ sql_toexecute = """
 response = pd.read_sql(sql_toexecute, conn)
 response.head()
 
+## 1.2 Data Quality Assessment (Group)
 # How many unique athletes are in the database?
-unique_athletes_query = """
-    SELECT COUNT(playername) AS unique_athlete_count
-    FROM research_experiment_refactor_test;
-"""
-unique_athletes_response = pd.read_sql(unique_athletes_query, conn)
-unique_athlete_count = unique_athletes_response['unique_athlete_count'][0]
-print(f"Number of unique athletes in the database: {unique_athlete_count}")
-
 unique_athletes_query = """
     SELECT COUNT(id) AS unique_athlete_count
     FROM research_experiment_refactor_test;
@@ -54,13 +47,12 @@ unique_athlete_count = unique_athletes_response['unique_athlete_count'][0]
 print(f"Number of unique athletes in the database: {unique_athlete_count}")
 
 # How many different sports/teams are represented?
-unique_sports_query = """
-    SELECT COUNT(team) AS unique_sport_count
-    FROM research_experiment_refactor_test;
+sports_teams_query = """SELECT COUNT(DISTINCT team) AS unique_team_count
+FROM research_experiment_refactor_test;
 """
-unique_sports_response = pd.read_sql(unique_sports_query, conn)
-unique_sport_count = unique_sports_response['unique_sport_count'][0]
-print(f"Number of different sports/teams represented: {unique_sport_count}")
+sports_teams_response = pd.read_sql(sports_teams_query, conn)
+unique_team_count = sports_teams_response['unique_team_count'][0]
+print(f"Number of different sports/teams represented: {unique_team_count}")
 
 # What is the date range of available data?
 sql = """
@@ -111,3 +103,53 @@ print(f"Number of athletes with data from multiple sources: {num_multi_source_at
 if num_multi_source_athletes > 0:
     print("Athletes with data from multiple sources:")
     print(multi_source_athletes_response)
+
+## 1.3 Metric Discovery & Selection (Group)
+# Lists the top 10 most common metrics for Hawkins data (filter by data_source = 'Hawkins')
+top_hawkins_metrics_query = """
+    SELECT metric, COUNT(*) AS metric_count
+    FROM research_experiment_refactor_test
+    WHERE data_source = 'Hawkins'
+    GROUP BY metric
+    ORDER BY metric_count DESC
+    LIMIT 10;
+"""
+top_hawkins_metrics_response = pd.read_sql(top_hawkins_metrics_query, conn)
+print("Top 10 most common metrics for Hawkins data:")
+print(top_hawkins_metrics_response)
+
+# Lists the top 10 most common metrics for Kinexon data (filter by data_source = 'Kinexon')
+top_kinexon_metrics_query = """
+    SELECT metric, COUNT(*) AS metric_count
+    FROM research_experiment_refactor_test
+    WHERE data_source = 'Kinexon'
+    GROUP BY metric
+    ORDER BY metric_count DESC
+    LIMIT 10;
+""" 
+top_kinexon_metrics_response = pd.read_sql(top_kinexon_metrics_query, conn)
+print("Top 10 most common metrics for Kinexon data:")
+print(top_kinexon_metrics_response)
+
+# Lists the top 10 most common metrics for Vald data (filter by data_source = 'Vald')
+top_vald_metrics_query = """
+    SELECT metric, COUNT(*) AS metric_count
+    FROM research_experiment_refactor_test
+    WHERE data_source = 'Vald'
+    GROUP BY metric
+    ORDER BY metric_count DESC
+    LIMIT 10;
+"""
+top_vald_metrics_response = pd.read_sql(top_vald_metrics_query, conn)
+print("Top 10 most common metrics for Vald data:")
+print(top_vald_metrics_response)
+
+# Identifies how many unique metrics exist across all data sources
+unique_metrics_query = """
+    SELECT COUNT(DISTINCT metric) AS unique_metric_count
+    FROM research_experiment_refactor_test;
+"""
+unique_metrics_response = pd.read_sql(unique_metrics_query, conn)
+unique_metric_count = unique_metrics_response['unique_metric_count'][0]
+print(f"Number of unique metrics across all data sources: {unique_metric_count}")
+

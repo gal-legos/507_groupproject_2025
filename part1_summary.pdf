@@ -1,0 +1,43 @@
+There are 6617426 unique athletes in the database. 
+There are 92 different number of sports/teams represented in this dataset.
+The range of this dataset is from 2018-10-15 19:27:41 to 2025-10-21 12:24:21.
+Kinexon is the data source with the most records: kinexon (4073754 records)
+There are 0 athletes with missing data in this dataset. 
+541 athletes have data from multiple sources (2 or 3 systems). 
+Top 10 common metrics for Hawkins data:
+0                   System Weight(N)         32373
+1                 Peak Velocity(m/s)         32123
+2                Propulsive Phase(s)         32123
+3  Avg. Relative Propulsive Force(%)         32123
+4           Avg. Propulsive Power(W)         32123
+5           Avg. Propulsive Force(N)         32123
+6        Propulsive Net Impulse(N.s)         32123
+7                     Jump Height(m)         32123
+8           Peak Propulsive Force(N)         32123
+9           Peak Propulsive Power(W)         32123
+
+Top 10 common metrics for Kinexon data:
+0                                 distance_total         40803
+1                               accel_load_accum         40803
+2                 event_count_exertion_category3         40803
+3            event_count_exertion_avg_per_minute         40803
+4                 event_count_exertion_category1         40803
+5  event_count_exertion_category2_avg_per_minute         40803
+6  event_count_exertion_category3_avg_per_minute         40803
+7                 event_count_exertion_category2         40803
+8                           event_count_exertion         40803
+9  event_count_exertion_category1_avg_per_minute         40803
+
+Top 10 common metrics for Vald data:
+             metric  metric_count
+0      leftAvgForce          4275
+1   leftCalibration          4275
+2       leftImpulse          4275
+3      leftMaxForce          4275
+4   leftRepetitions          4275
+5        leftTorque          4275
+6     rightAvgForce          4275
+7  rightCalibration          4275
+8      rightImpulse          4275
+9     rightMaxForce          4275
+548 unique metrics exist across all data sources. 

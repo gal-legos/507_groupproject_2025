@@ -52,8 +52,8 @@ selected_metrics = [
     "Jump Height(m)",
     "Avg. Braking Force(N)",
     "Avg. Propulsive Force(N)",
-    "Avg. Landing Force(N)",
-    "Peak Propulsive Force(N)"
+    "Propulsive Phase(s)",
+    "Braking Phase(s)"
 ]
 
 # Apply filter

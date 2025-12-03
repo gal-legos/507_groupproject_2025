@@ -1,0 +1,549 @@
+metric
+§speed_max_ratio
+accel_avg
+accel_load_accum
+accel_load_accum_avg_per_minute
+accel_load_avg
+accel_load_max
+accel_max
+accel_min
+Avg. Braking Force(N)
+Avg. Braking Power(W)
+Avg. Braking RFD(N/s)
+Avg. Braking Velocity(m/s)
+Avg. Force(N)
+Avg. Impact Force(N)
+Avg. Impact Power(W)
+Avg. Impact Velocity(m/s)
+Avg. Jump Height(m)
+Avg. Landing Force(N)
+Avg. Left Force(N)
+Avg. mRSI
+Avg. Propulsive Force(N)
+Avg. Propulsive Power(W)
+Avg. Propulsive Velocity(m/s)
+Avg. Relative Braking Force(%)
+Avg. Relative Braking Power(W/kg)
+Avg. Relative Impact Force(%)
+Avg. Relative Impact Power(W/kg)
+Avg. Relative Propulsive Force(%)
+Avg. Relative Propulsive Power(W/kg)
+Avg. Relative Stabilization Power(W/kg)
+Avg. Right Force(N)
+Avg. RSI
+Avg. Stabilization Force(N)
+Avg. Stabilization Power(W)
+Avg. Stabilization Velocity(m/s)
+Box Height(m)
+Braking Impulse(N.s)
+Braking Net Impulse(N.s)
+Braking Phase %
+Braking Phase(s)
+Braking RFD(N/s)
+CMJ Avg. Braking Force(N)
+CMJ Avg. Braking Power(W)
+CMJ Avg. Propulsive Force(N)
+CMJ Avg. Propulsive Power(W)
+CMJ Avg. Relative Braking Force(%)
+CMJ Avg. Relative Braking Power(W/kg)
+CMJ Avg. Relative Propulsive Force(%)
+CMJ Avg. Relative Propulsive Power(W/kg)
+CMJ Braking Impulse(N.s)
+CMJ Braking Net Impulse(N.s)
+CMJ Braking RFD(N/s)
+CMJ Depth(m)
+CMJ Force At Min Displacement(N)
+CMJ Jump Height(m)
+CMJ Jump Momentum(kg.m/s)
+CMJ L|R Avg. Braking Force(%)
+CMJ L|R Avg. Propulsive Force(%)
+CMJ L|R Braking Impulse Index(%)
+CMJ L|R Propulsive Impulse Index(%)
+CMJ Modified RSI
+CMJ Peak Braking Force(N)
+CMJ Peak Braking Power(W)
+CMJ Peak Propulsive Force(N)
+CMJ Peak Propulsive Power(W)
+CMJ Peak Relative Braking Force(%)
+CMJ Peak Relative Braking Power(W/kg)
+CMJ Peak Relative Propulsive Force(%)
+CMJ Peak Relative Propulsive Power(W/kg)
+CMJ Propulsive Impulse(N.s)
+CMJ Propulsive Net Impulse(N.s)
+CMJ Relative Braking Impulse(N.s/kg)
+CMJ Relative Braking Net Impulse(N.s/kg)
+CMJ Relative Force At Min Displacement(%)
+CMJ Relative Propulsive Impulse(N.s/kg)
+CMJ Relative Propulsive Net Impulse(N.s/kg)
+CMJ RSI
+CMJ Time To Takeoff(s)
+Contact Time(s)
+Contact Velocity(m/s)
+Countermovement Depth(m)
+disk_usage
+distance_acceleration_load_category1
+distance_acceleration_load_category2
+distance_acceleration_load_category3
+distance_acceleration_load_category4
+distance_anaerobic_activity
+distance_high_metabolic_load
+distance_high_metabolic_load_avg_per_minute
+distance_high_metabolic_power
+distance_high_metabolic_power_avg_per_minute
+distance_speed_category1
+distance_speed_category1_avg_per_minute
+distance_speed_category2
+distance_speed_category2_avg_per_minute
+distance_speed_category3
+distance_speed_category3_avg_per_minute
+distance_speed_category4
+distance_speed_category4_avg_per_minute
+distance_speed_category5
+distance_speed_category5_avg_per_minute
+distance_speed_category6
+distance_speed_category6_avg_per_minute
+distance_total
+distance_total_avg_per_minute
+event_count_acceleration
+event_count_acceleration_avg_per_minute
+event_count_acceleration_category1
+event_count_acceleration_category1_avg_per_minute
+event_count_acceleration_category2
+event_count_acceleration_category2_avg_per_minute
+event_count_acceleration_category3
+event_count_acceleration_category3_avg_per_minute
+event_count_acceleration_category4
+event_count_acceleration_category4_avg_per_minute
+event_count_acceleration_category5
+event_count_acceleration_category5_avg_per_minute
+event_count_acceleration_category6
+event_count_acceleration_category6_avg_per_minute
+event_count_acceleration_category7
+event_count_acceleration_category7_avg_per_minute
+event_count_change_of_direction
+event_count_change_of_direction_avg_per_minute
+event_count_change_of_direction_left
+event_count_change_of_direction_left_avg_per_minute
+event_count_change_of_direction_right
+event_count_change_of_direction_right_avg_per_minute
+event_count_change_of_orientation
+event_count_change_of_orientation_avg_per_minute
+event_count_deceleration
+event_count_deceleration_avg_per_minute
+event_count_deceleration_category1
+event_count_deceleration_category1_avg_per_minute
+event_count_deceleration_category2
+event_count_deceleration_category2_avg_per_minute
+event_count_deceleration_category3
+event_count_deceleration_category3_avg_per_minute
+event_count_deceleration_category4
+event_count_deceleration_category4_avg_per_minute
+event_count_deceleration_category5
+event_count_deceleration_category5_avg_per_minute
+event_count_deceleration_category6
+event_count_deceleration_category6_avg_per_minute
+event_count_deceleration_category7
+event_count_deceleration_category7_avg_per_minute
+event_count_dfl_sprint
+event_count_dfl_sprint_avg_per_minute
+event_count_exertion
+event_count_exertion_avg_per_minute
+event_count_exertion_category1
+event_count_exertion_category1_avg_per_minute
+event_count_exertion_category2
+event_count_exertion_category2_avg_per_minute
+event_count_exertion_category3
+event_count_exertion_category3_avg_per_minute
+event_count_exertion_category4
+event_count_exertion_category4_avg_per_minute
+event_count_exertion_category5
+event_count_exertion_category5_avg_per_minute
+event_count_exertion_category6
+event_count_exertion_category6_avg_per_minute
+event_count_exertion_category7
+event_count_exertion_category7_avg_per_minute
+event_count_heart_rate_recovery
+event_count_heart_rate_recovery_avg_per_minute
+event_count_jump
+event_count_jump_avg_per_minute
+event_count_jump_category1
+event_count_jump_category1_avg_per_minute
+event_count_jump_category2
+event_count_jump_category2_avg_per_minute
+event_count_jump_category3
+event_count_jump_category3_avg_per_minute
+event_count_jump_category4
+event_count_jump_category4_avg_per_minute
+event_count_jump_category5
+event_count_jump_category5_avg_per_minute
+event_count_jump_category6
+event_count_jump_category6_avg_per_minute
+event_count_jump_category7
+event_count_jump_category7_avg_per_minute
+event_count_speed_zone_entry
+event_count_speed_zone_entry_avg_per_minute
+event_count_speed_zone_entry_category1
+event_count_speed_zone_entry_category1_avg_per_minute
+event_count_speed_zone_entry_category2
+event_count_speed_zone_entry_category2_avg_per_minute
+event_count_speed_zone_entry_category3
+event_count_speed_zone_entry_category3_avg_per_minute
+event_count_speed_zone_entry_category4
+event_count_speed_zone_entry_category4_avg_per_minute
+event_count_speed_zone_entry_category5
+event_count_speed_zone_entry_category5_avg_per_minute
+event_count_speed_zone_entry_category6
+event_count_speed_zone_entry_category6_avg_per_minute
+event_count_speed_zone_entry_category7
+event_count_speed_zone_entry_category7_avg_per_minute
+event_count_tag
+event_count_tag_avg_per_minute
+event_count_tempo_run
+event_count_tempo_run_avg_per_minute
+Flight Time(s)
+Force at 0 ms(N)
+Force at 100 ms(N)
+Force at 150 ms(N)
+Force at 200 ms(N)
+Force at 250 ms(N)
+Force at 50 ms(N)
+Force at Min Displacement(N)
+heart_rate_avg
+heart_rate_max
+heart_rate_min
+human_core_temperature_avg
+human_core_temperature_max
+Impact Peak(Yes/No)
+Impact Phase %
+Impact Phase(s)
+Impact RFD(N/s)
+Impulse 0-100ms(N.s)
+Impulse 0-150ms(N.s)
+Impulse 0-200ms(N.s)
+Impulse 0-250ms(N.s)
+Impulse 0-50ms(N.s)
+Impulse Ratio
+Initiation Threshold(N)
+Jump Height(m)
+Jump Momentum(kg.m/s)
+jump_height_max
+jump_load
+jump_load_avg_per_minute
+jump_load_per_mass
+jump_load_per_mass_avg_per_minute
+L|R Avg. Braking Force(%)
+L|R Avg. Braking RFD(%)
+L|R Avg. Force(%)
+L|R Avg. Impact Force(%)
+L|R Avg. Landing Force(%)
+L|R Avg. Propulsive Force(%)
+L|R Avg. Stabilization Force(%)
+L|R Braking Impulse Index(%)
+L|R Impact RFD(%)
+L|R Landing Impulse Index(%)
+L|R Peak Braking Force(%)
+L|R Peak Force(%)
+L|R Peak Landing Force(%)
+L|R Peak Propulsive Force(%)
+L|R Propulsive Impulse Index(%)
+Landing Height(m)
+Landing Performance Index
+Landing Phase(s)
+Landing Stiffness(N/m)
+Left AP Sway Length(cm)
+Left AP Sway Range(cm)
+Left Avg. AP Sway Velocity(cm/s)
+Left Avg. Braking Force(N)
+Left Avg. Braking RFD(N/s)
+Left Avg. Impact Force(N)
+Left Avg. Landing Force(N)
+Left Avg. ML Sway Velocity(cm/s)
+Left Avg. Propulsive Force(N)
+Left Avg. Stabilization Force(N)
+Left CMJ Avg. Braking Force(N)
+Left CMJ Avg. Propulsive Force(N)
+Left Force at 0 ms(N)
+Left Force at 100 ms(N)
+Left Force at 150 ms(N)
+Left Force at 200 ms(N)
+Left Force at 250 ms(N)
+Left Force at 50 ms(N)
+Left Force at Peak Braking Force(N)
+Left Force at Peak Force(N)
+Left Force at Peak Landing Force(N)
+Left Force at Peak Propulsive Force(N)
+Left Impact RFD(N/s)
+Left ML Sway Length(cm)
+Left ML Sway Range(cm)
+Left Peak Force(N)
+Left Rebound Avg. Braking Force(N)
+Left Rebound Avg. Propulsive Force(N)
+Left Sway Length(cm)
+Left Sway Range(cm)
+Left Sway Velocity(cm/s)
+leftAvgForce
+leftCalibration
+leftImpulse
+leftMaxForce
+leftRepetitions
+leftTorque
+Length of Pull(s)
+load_acceleration_load_category1
+load_acceleration_load_category2
+load_acceleration_load_category3
+load_acceleration_load_category4
+load_acceleration_load_category5
+mechanical_accel_category1
+mechanical_accel_category1_avg_per_minute
+mechanical_accel_category2
+mechanical_accel_category2_avg_per_minute
+mechanical_accel_category3
+mechanical_accel_category3_avg_per_minute
+mechanical_accel_category4
+mechanical_accel_category4_avg_per_minute
+mechanical_accel_total
+mechanical_accel_total_avg_per_minute
+mechanical_decel_category1
+mechanical_decel_category1_avg_per_minute
+mechanical_decel_category2
+mechanical_decel_category2_avg_per_minute
+mechanical_decel_category3
+mechanical_decel_category3_avg_per_minute
+mechanical_decel_category4
+mechanical_decel_category4_avg_per_minute
+mechanical_decel_total
+mechanical_decel_total_avg_per_minute
+mechanical_intensity
+mechanical_load
+metabolic_power_avg
+metabolic_power_max
+metabolic_power_per_mass_avg
+metabolic_power_per_mass_max
+metabolic_work
+metabolic_work_avg_per_minute
+mRSI
+needs_reprocessing
+Net Force at 0 ms(N)
+Net Force at 100 ms(N)
+Net Force at 150 ms(N)
+Net Force at 200 ms(N)
+Net Force at 250 ms(N)
+Net Force at 50 ms(N)
+Net Impulse 0-100ms(N.s)
+Net Impulse 0-150ms(N.s)
+Net Impulse 0-200ms(N.s)
+Net Impulse 0-250ms(N.s)
+Net Impulse 0-50ms(N.s)
+Net Impulse Ratio
+Net Peak Force(N)
+Number of Jumps(Count)
+only_imu
+P1 Propulsive Impulse(N.s)
+P1|P2 Propulsive Impulse Index
+P2 Propulsive Impulse(N.s)
+Peak Braking Force(N)
+Peak Braking Power(W)
+Peak Braking Velocity(m/s)
+Peak Force(N)
+Peak Impact Power(W)
+Peak Jump Height(m)
+Peak Jump mRSI
+Peak Jump RSI
+Peak Landing Force(N)
+Peak Left Force(N)
+Peak mRSI
+Peak Propulsive Force(N)
+Peak Propulsive Power(W)
+Peak Relative Braking Force(%)
+Peak Relative Braking Power(W/kg)
+Peak Relative Force(%)
+Peak Relative Impact Power(W/kg)
+Peak Relative Propulsive Force(%)
+Peak Relative Propulsive Power(W/kg)
+Peak Relative Stabilization Power(W/kg)
+Peak Right Force(N)
+Peak RSI
+Peak Stabilization Power(W)
+Peak Velocity(m/s)
+physio_intensity
+physio_load
+Positive Impulse(N.s)
+Positive Net Impulse(N.s)
+Propulsive Impulse(N.s)
+Propulsive Net Impulse(N.s)
+Propulsive Phase %
+Propulsive Phase(s)
+Propulsive RFD(N/s)
+Rebound Avg. Braking Force(N)
+Rebound Avg. Braking Power(W)
+Rebound Avg. Propulsive Force(N)
+Rebound Avg. Propulsive Power(W)
+Rebound Avg. Relative Braking Force(%)
+Rebound Avg. Relative Braking Power(W/kg)
+Rebound Avg. Relative Propulsive Force(%)
+Rebound Avg. Relative Propulsive Power(W/kg)
+Rebound Braking Impulse(N.s)
+Rebound Braking Net Impulse(N.s)
+Rebound Contact Time(ms)
+Rebound Depth(m)
+Rebound Flight Time(ms)
+Rebound Force At Min Displacement(N)
+Rebound Impact Peak(Yes/No)
+Rebound Impulse Ratio
+Rebound Jump Height(m)
+Rebound Jump Momentum(kg.m/s)
+Rebound L|R Avg. Braking Force(%)
+Rebound L|R Avg. Propulsive Force(%)
+Rebound L|R Braking Impulse Index(%)
+Rebound L|R Propulsive Impulse Index(%)
+Rebound Modified RSI
+Rebound Peak Braking Force(N)
+Rebound Peak Braking Power(W)
+Rebound Peak Propulsive Force(N)
+Rebound Peak Propulsive Power(W)
+Rebound Peak Relative Braking Force(%)
+Rebound Peak Relative Braking Power(W/kg)
+Rebound Peak Relative Propulsive Force(%)
+Rebound Peak Relative Propulsive Power(W/kg)
+Rebound Positive Impulse(N.s)
+Rebound Positive Net Impulse(N.s)
+Rebound Propulsive Impulse(N.s)
+Rebound Propulsive Net Impulse(N.s)
+Rebound Relative Braking Impulse(N.s/kg)
+Rebound Relative Braking Net Impulse(N.s/kg)
+Rebound Relative Force At Min Displacement(%)
+Rebound Relative Propulsive Impulse(N.s/kg)
+Rebound Relative Propulsive Net Impulse(N.s/kg)
+Rebound RSI
+Rebound Spring Like Correlation
+Rebound Stiffness(N/m)
+Rebound Time to Peak Braking Force(ms)
+Relative Braking Impulse(N.s/kg)
+Relative Braking Net Impulse(N.s/kg)
+Relative Force at 0 ms (BW)(N/kg)
+Relative Force at 0 ms(%)
+Relative Force at 100 ms (BW)(N/kg)
+Relative Force at 100 ms(%)
+Relative Force at 150 ms (BW)(N/kg)
+Relative Force at 150 ms(%)
+Relative Force at 200 ms (BW)(N/kg)
+Relative Force at 200 ms(%)
+Relative Force at 250 ms (BW)(N/kg)
+Relative Force at 250 ms(%)
+Relative Force at 50 ms (BW)(N/kg)
+Relative Force at 50 ms(%)
+Relative Force at Min Displacement(%)
+Relative Peak Force (BW)(N/kg)
+Relative Peak Force(%)
+Relative Peak Landing Force(%)
+Relative Propulsive Impulse(N.s/kg)
+Relative Propulsive Net Impulse(N.s/kg)
+RFD 0-100 ms(N/s)
+RFD 0-150 ms(N/s)
+RFD 0-200 ms(N/s)
+RFD 0-250 ms(N/s)
+RFD 0-50 ms(N/s)
+Right AP Sway Length(cm)
+Right AP Sway Range(cm)
+Right Avg. AP Sway Velocity(cm/s)
+Right Avg. Braking Force(N)
+Right Avg. Braking RFD(N/s)
+Right Avg. Impact Force(N)
+Right Avg. Landing Force(N)
+Right Avg. ML Sway Velocity(cm/s)
+Right Avg. Propulsive Force(N)
+Right Avg. Stabilization Force(N)
+Right CMJ Avg. Braking Force(N)
+Right CMJ Avg. Propulsive Force(N)
+Right Force at 0 ms(N)
+Right Force at 100 ms(N)
+Right Force at 150 ms(N)
+Right Force at 200 ms(N)
+Right Force at 250 ms(N)
+Right Force at 50 ms(N)
+Right Force at Peak Braking Force(N)
+Right Force at Peak Force(N)
+Right Force at Peak Landing Force(N)
+Right Force at Peak Propulsive Force(N)
+Right Impact RFD(N/s)
+Right ML Sway Length(cm)
+Right ML Sway Range(cm)
+Right Peak Force(N)
+Right Rebound Avg. Braking Force(N)
+Right Rebound Avg. Propulsive Force(N)
+Right Sway Length(cm)
+Right Sway Range(cm)
+Right Sway Velocity(cm/s)
+rightAvgForce
+rightCalibration
+rightImpulse
+rightMaxForce
+rightRepetitions
+rightTorque
+RSI
+SD Left Force(N)
+SD Right Force(N)
+SD Total Force(N)
+speed_avg
+speed_distance_per_time
+speed_max
+Spring Like Correlation
+Stability Depth(m)
+Stabilization Phase %
+Stabilization Phase(s)
+Standard Deviation(N)
+Stiffness(N/m)
+System Weight(N)
+Takeoff Velocity(m/s)
+Time to Peak Braking Force(ms)
+Time to Peak Force(s)
+Time to Stabilization(ms)
+Time To Takeoff(s)
+time_acceleration_load_category1
+time_acceleration_load_category2
+time_acceleration_load_category3
+time_acceleration_load_category4
+time_acceleration_load_category5
+time_anaerobic_activity
+time_heart_rate_category1
+time_heart_rate_category2
+time_heart_rate_category3
+time_heart_rate_category4
+time_heart_rate_category5
+time_heart_rate_category6
+time_high_metabolic_load
+time_metabolic_power_category1
+time_metabolic_power_category2
+time_metabolic_power_category3
+time_metabolic_power_category4
+time_metabolic_power_category5
+time_on_playing_field
+time_speed_category1
+time_speed_category2
+time_speed_category3
+time_speed_category4
+time_speed_category5
+time_speed_category6
+time_total
+Top 3 Jumps Avg. Jump Height(m)
+Top 3 Jumps Avg. mRSI
+Top 3 Jumps Avg. RSI
+Top 3 Jumps Peak mRSI
+Top 3 Jumps Peak RSI
+Top 5 Jumps Avg. Jump Height(m)
+Top 5 Jumps Avg. mRSI
+Top 5 Jumps Avg. RSI
+Top 5 Jumps Peak mRSI
+Top 5 Jumps Peak RSI
+Total Contact Time(s)
+Total Flight Time(s)
+track_gps_always
+track_heart_rate_always
+track_outside_field
+track_while_clock_stopped
+trimp
+Unweighting Phase %
+Unweighting Phase(s)
+Weight in Newtons(N)
+Weight(kgs)
+Weight(lbs)

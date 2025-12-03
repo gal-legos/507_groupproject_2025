@@ -25,8 +25,8 @@ metrics = (
     "'Jump Height(m)', "
     "'Avg. Braking Force(N)', "
     "'Avg. Propulsive Force(N)', "
-    "'Avg. Landing Force(N)', "
-    "'Peak Propulsive Force(N)'"
+    "'Propulsive Phase(s)', "
+    "'Braking Phase(s)'"
 )
 
 # Create a dataframe for each of the selected metrics
@@ -34,13 +34,26 @@ metrics = (
 jump_height_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Jump Height(m)';", conn)
 braking_force_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Avg. Braking Force(N)';", conn)
 propulsive_force_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Avg. Propulsive Force(N)';", conn)
-landing_force_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Avg. Landing Force(N)';", conn)
-peak_propulsive_force_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Peak Propulsive Force(N)';", conn)
+propulsive_phase_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Propulsive Phase(s)';", conn)
+braking_phase_df = pd.read_sql(f"SELECT * FROM research_experiment_refactor_test WHERE metric = 'Braking Phase(s)';", conn)
 
-landing_force_df
+### IGNORE ###
+"""
+# export jump height dataframe to csv
+jump_height_df.to_csv('jump_height_data.csv', index=False)
 
-# export landing force dataframe to csv
-landing_force_df.to_csv('landing_force_data.csv', index=False)
+# export braking force dataframe to csv
+braking_force_df.to_csv('braking_force_data.csv', index=False)
+
+# export propulsive force dataframe to csv
+propulsive_force_df.to_csv('propulsive_force_data.csv', index=False)
+
+# export propulsive phase dataframe to csv
+propulsive_phase_df.to_csv('propulsive_phase_data.csv', index=False)
+
+# export braking phase dataframe to csv
+braking_phase_df.to_csv('braking_phase_data.csv', index=False)
+"""
 
 # Identify which of your selected metrics have the most NULL or zero values
 
@@ -56,39 +69,50 @@ null_metric_df = pd.read_sql(null_metric_sql, conn)
 
 null_metric_df
 
-# Table for 'Avg. Landing Force(N)'
+# For the metrics listed above, create separate tables showing all measurements for each athlete
 
-landing_force_athletes_df = """
-SELECT playername, team, timestamp, metric, value
-FROM research_experiment_refactor_test
-WHERE metric IN ('Avg. Landing Force(N)')
-ORDER BY playername, timestamp;
-"""
+metric_names = [
+    'Jump Height(m)',
+    'Avg. Braking Force(N)',
+    'Avg. Propulsive Force(N)',
+    'Propulsive Phase(s)',
+    'Braking Phase(s)'
+]
 
-landing_force_athletes_df = pd.read_sql(landing_force_athletes_df, conn)
+# Dictionary to store dataframes
+athletes_dfs = {}
 
-landing_force_athletes_df
-
-# Calculate the percent of athletes that have at least 5 measurements for 'Avg. Landing Force' for each sports team
-
-# Query: count players with >=5 landing-force measurements, aggregated per team
-landing_force_athletes_sql = """
-  SELECT team, COUNT(*) AS players_with_5plus
-  FROM (
-    SELECT team, playername, COUNT(*) AS cnt
+for metric in metric_names:
+    # Create variable name from metric (replace special chars with underscore)
+    var_name = metric.replace('(', '').replace(')', '').replace(' ', '_').replace('.', '').lower()
+    
+    # SQL query to fetch data for this metric
+    sql_query = f"""
+    SELECT playername, team, timestamp, metric, value
     FROM research_experiment_refactor_test
-    WHERE metric = 'Avg. Landing Force(N)'
-    GROUP BY team, playername
-    HAVING COUNT(*) >= 5
-  ) AS sub
-  GROUP BY team;
-  """
+    WHERE metric = '{metric}'
+    ORDER BY playername, timestamp;
+    """
+    
+    # Read SQL into dataframe
+    df = pd.read_sql(sql_query, conn)
+    
+    # Store in dictionary
+    athletes_dfs[var_name] = df
+    
+    # Also create as individual variable for backwards compatibility
+    globals()[f"{var_name}_athletes_df"] = df
 
-landing_force_athletes = pd.read_sql(landing_force_athletes_sql, conn)
+# Define each dataframe variable for easier access
+jump_height_athletes_df = athletes_dfs['jump_heightm']
+braking_force_athletes_df = athletes_dfs['avg_braking_forcen']
+propulsive_force_athletes_df = athletes_dfs['avg_propulsive_forcen']
+propulsive_phase_athletes_df = athletes_dfs['propulsive_phases']
+braking_phase_athletes_df = athletes_dfs['braking_phases']
 
-landing_force_athletes
+# Calculate the percent of athletes that have at least 5 measurements for each metric
 
-# Get total athlete counts per team
+# Get total athlete counts per team (once, reuse for all metrics)
 total_athletes_sql = """
   SELECT team, COUNT(DISTINCT playername) AS total_athlete_count
   FROM research_experiment_refactor_test
@@ -97,24 +121,63 @@ total_athletes_sql = """
 
 total_athletes = pd.read_sql(total_athletes_sql, conn)
 
-# Merge team-level counts and compute percentage
-landing_force_percentage = pd.merge(
-    total_athletes,
-    landing_force_athletes,
-    on='team',
-    how='left'
-)
+total_athletes
 
-# Fill teams with zero qualifying players
-landing_force_percentage['players_with_5plus'] = landing_force_percentage['players_with_5plus'].fillna(0).astype(int)
+# Dictionary to store percentage results for each metric
+percentage_dfs = {}
 
-# Percentage (rounded to 2 decimals)
-landing_force_percentage['percentage_with_5_measurements'] = (
-    landing_force_percentage['players_with_5plus'] / landing_force_percentage['total_athlete_count'] * 100
-).round(2)
+# Run analysis for each metric
+for metric in metric_names:
+    # Create sanitized name for storage
+    var_name = metric.replace('(', '').replace(')', '').replace(' ', '_').replace('.', '').lower()
+    
+    # Query: count players with >=5 measurements for this metric, aggregated per team
+    metric_athletes_sql = f"""
+      SELECT team, COUNT(*) AS players_with_5plus
+      FROM (
+        SELECT team, playername, COUNT(*) AS cnt
+        FROM research_experiment_refactor_test
+        WHERE metric = '{metric}'
+        GROUP BY team, playername
+        HAVING COUNT(*) >= 5
+      ) AS sub
+      GROUP BY team;
+      """
+    
+    # Read query results
+    metric_athletes = pd.read_sql(metric_athletes_sql, conn)
+    
+    # Merge team-level counts and compute percentage
+    metric_percentage = pd.merge(
+        total_athletes,
+        metric_athletes,
+        on='team',
+        how='left'
+    )
+    
+    # Fill teams with zero qualifying players
+    metric_percentage['players_with_5plus'] = metric_percentage['players_with_5plus'].fillna(0).astype(int)
+    
+    # Percentage (rounded to 2 decimals)
+    metric_percentage['percentage_with_5_measurements'] = (
+        metric_percentage['players_with_5plus'] / metric_percentage['total_athlete_count'] * 100
+    ).round(2)
+    
+    # Sort by percentage from largest to smallest
+    metric_percentage = metric_percentage.sort_values('percentage_with_5_measurements', ascending=False).reset_index(drop=True)
+    
+    # Store in dictionary and as global variable
+    percentage_dfs[var_name] = metric_percentage
+    globals()[f"{var_name}_percentage"] = metric_percentage
 
-landing_force_percentage
+# Define each percentage dataframe variable for easier access
+jump_heightm_percentage = percentage_dfs['jump_heightm']
+avg_braking_forcen_percentage = percentage_dfs['avg_braking_forcen']
+avg_propulsive_forcen_percentage = percentage_dfs['avg_propulsive_forcen']
+propulsive_phases_percentage = percentage_dfs['propulsive_phases']
+braking_phases_percentage = percentage_dfs['braking_phases']
 
+jump_heightm_percentage.head()
 
 # Identify athletes who haven't been tested in the last 6 months (for your selected metrics)
 
@@ -123,8 +186,13 @@ six_months_ago = pd.Timestamp.now() - pd.DateOffset(months=6)
 athletes_not_tested_sql = f"""
 SELECT team, COUNT(DISTINCT playername) AS athletes_not_tested
 FROM research_experiment_refactor_test
-WHERE timestamp < '{six_months_ago}'
-AND metric IN ({metrics})
+WHERE (playername, metric) IN (
+  SELECT playername, metric
+  FROM research_experiment_refactor_test
+  WHERE metric IN ({metrics})
+  GROUP BY playername, metric
+  HAVING MAX(timestamp) < '{six_months_ago}'
+)
 GROUP BY team;
 """
 
@@ -135,13 +203,11 @@ athletes_not_tested_df
 # Is there enough data to compare the selected metrics across teams?
 
 # Group athletes by team
-athletes_by_team = landing_force_athletes.groupby('team')
+athletes_by_team = propulsive_phase_athletes_df.groupby('team')
 # View each team's athletes
 for team_name, group in athletes_by_team:
     print(f"\n{team_name}:")
     print(group)
-
-# Create wide dataframe using SQL pivot
 
 # Function to create wide dataframe from long format for specific player
 def create_wide_df(player_name):
@@ -159,73 +225,153 @@ def create_wide_df(player_name):
   return wide_player_df
 
 # Example usage for a specific player
-create_wide_df('PLAYER_1208')
+create_wide_df('PLAYER_741')
 
-create_wide_df('PLAYER_570')
+create_wide_df('PLAYER_469')
 
-create_wide_df('PLAYER_338')
+create_wide_df('PLAYER_1244')
 
-# get full table for landing force
+# Create a df that lists the mean of each metric by team
 
-landing_force_full_sql = """
-SELECT *
-FROM research_experiment_refactor_test
-WHERE metric = 'Avg. Landing Force(N)';
-"""
+metric_columns = {
+    'Jump Height(m)': 'avg_jump_height',
+    'Avg. Braking Force(N)': 'avg_braking_force',
+    'Avg. Propulsive Force(N)': 'avg_propulsive_force',
+    'Propulsive Phase(s)': 'avg_propulsive_phase',
+    'Braking Phase(s)': 'avg_braking_phase'
+}
 
-landing_force_full = pd.read_sql(landing_force_full_sql, conn)
+# Dictionary to store each metric's team means
+team_means_by_metric = {}
 
-landing_force_full
+for metric, col_name in metric_columns.items():
+    metric_sql = f"""
+    SELECT team, AVG(value) AS {col_name}
+    FROM research_experiment_refactor_test
+    WHERE metric = '{metric}'
+    GROUP BY team;
+    """
+    metric_team_mean = pd.read_sql(metric_sql, conn)
+    team_means_by_metric[metric] = metric_team_mean
+    print(metric_team_mean.head())
 
-# Calculate mean by team
-team_summary = landing_force_full.groupby('team').agg({
-    'value': 'mean'  # Average landing force per team
-}).rename(columns={'value': 'avg_landing_force'})
+# Create individual variables for each metric's team means
+team_means_jh = team_means_by_metric['Jump Height(m)']
+team_means_bf = team_means_by_metric['Avg. Braking Force(N)']
+team_means_pf = team_means_by_metric['Avg. Propulsive Force(N)']
+team_means_pp = team_means_by_metric['Propulsive Phase(s)']
+team_means_bp = team_means_by_metric['Braking Phase(s)']
+team_means_jh.head()
 
-# Get rid of NaN values
-team_summary = team_summary.dropna()
+# Calculate mean for individual athletes for each metric
+metric_to_df = {
+    'Jump Height(m)': jump_height_athletes_df,
+    'Avg. Braking Force(N)': braking_force_athletes_df,
+    'Avg. Propulsive Force(N)': propulsive_force_athletes_df,
+    'Propulsive Phase(s)': propulsive_phase_athletes_df,
+    'Braking Phase(s)': braking_phase_athletes_df,
+}
 
-team_summary
+metric_to_col = {
+    'Jump Height(m)': 'avg_jump_height',
+    'Avg. Braking Force(N)': 'avg_braking_force',
+    'Avg. Propulsive Force(N)': 'avg_propulsive_force',
+    'Propulsive Phase(s)': 'avg_propulsive_phase',
+    'Braking Phase(s)': 'avg_braking_phase',
+}
 
-# Calculate mean for individual athletes
-athlete_summary = landing_force_full.groupby(['playername', 'team']).agg({
-    'value': 'mean'  # Average landing force per athlete
-}).rename(columns={'value': 'avg_landing_force'}).reset_index()
+athlete_summaries = {}
 
-# Get rid of NaN values
-athlete_summary = athlete_summary.dropna()
+for metric, df in metric_to_df.items():
+    col_name = metric_to_col[metric]
+    summ = (
+        df.groupby(['playername', 'team'])
+          .agg({'value': 'mean'})
+          .rename(columns={'value': col_name})
+          .reset_index()
+    )
+    # Drop rows with NaNs
+    summ = summ.dropna(subset=[col_name])
+    athlete_summaries[metric] = summ
+    key = metric.replace('(', '').replace(')', '').replace(' ', '_').replace('.', '').lower()
+    globals()[f"{key}_athlete_summary"] = summ
 
-athlete_summary
+# Define individual athlete summary variables
+athlete_summary_jh = athlete_summaries['Jump Height(m)']
+athlete_summary_bf = athlete_summaries['Avg. Braking Force(N)']
+athlete_summary_pf = athlete_summaries['Avg. Propulsive Force(N)']
+athlete_summary_pp = athlete_summaries['Propulsive Phase(s)']
+athlete_summary_bp = athlete_summaries['Braking Phase(s)']
+athlete_summary_bp.head()
 
 # Join team and athlete summaries to compare individuals to team averages
-athlete_team_comparison = pd.merge(
-    athlete_summary,
-    team_summary,
-    on='team',
-    how='left',
-    suffixes=('_athlete', '_team')
-)
 
-athlete_team_comparison
+# Create dictionary to map metric names to athlete summary dataframes
+metric_to_athlete_summary = {
+    'Jump Height(m)': athlete_summary_jh,
+    'Avg. Braking Force(N)': athlete_summary_bf,
+    'Avg. Propulsive Force(N)': athlete_summary_pf,
+    'Propulsive Phase(s)': athlete_summary_pp,
+    'Braking Phase(s)': athlete_summary_bp,
+}
 
-# Calculate percent difference from team average
-athlete_team_comparison['percent_diff_from_team'] = (
-    (athlete_team_comparison['avg_landing_force_athlete'] - athlete_team_comparison['avg_landing_force_team']) /
-    athlete_team_comparison['avg_landing_force_team']
+metric_to_team_summary = {
+    'Jump Height(m)': team_means_jh,
+    'Avg. Braking Force(N)': team_means_bf,
+    'Avg. Propulsive Force(N)': team_means_pf,
+    'Propulsive Phase(s)': team_means_pp,
+    'Braking Phase(s)': team_means_bp,
+}
+
+# Merge athlete-level means with combined team means
+
+athlete_team_comparisons = {}
+
+for metric in metric_names:
+    athlete_df = metric_to_athlete_summary[metric]
+    team_df = metric_to_team_summary[metric]
+    
+    merged_df = pd.merge(
+        athlete_df,
+        team_df,
+        on='team',
+        how='inner',
+        suffixes=('_athlete', '_team')
+    )
+    
+    athlete_team_comparisons[metric] = merged_df
+    key = metric.replace('(', '').replace(')', '').replace(' ', '_').replace('.', '').lower()
+    globals()[f"{key}_athlete_team_comparison"] = merged_df
+
+# Define individual athlete-team comparison variables
+athlete_team_comparison_jh = athlete_team_comparisons['Jump Height(m)']
+athlete_team_comparison_bf = athlete_team_comparisons['Avg. Braking Force(N)']
+athlete_team_comparison_pf = athlete_team_comparisons['Avg. Propulsive Force(N)']
+athlete_team_comparison_pp = athlete_team_comparisons['Propulsive Phase(s)']
+athlete_team_comparison_bp = athlete_team_comparisons['Braking Phase(s)']
+athlete_team_comparison_bf.head()
+
+# Using the individual athlete-team comparison tables, calculate percent difference from team mean for Jump Height
+
+
+
+athlete_team_comparison_jh['percent_diff_from_team'] = (
+    (athlete_team_comparison_jh['avg_jump_height_athlete'] - athlete_team_comparison_jh['avg_jump_height_team']) /
+    athlete_team_comparison_jh['avg_jump_height_team']
 ) * 100
 
 # Identify top 5 and bottom 5 performers relative to team mean
-top_5 = athlete_team_comparison.nlargest(5, 'percent_diff_from_team')
-bottom_5 = athlete_team_comparison.nsmallest(5, 'percent_diff_from_team')
+top_5 = athlete_team_comparison_jh.nlargest(5, 'percent_diff_from_team')
+bottom_5 = athlete_team_comparison_jh.nsmallest(5, 'percent_diff_from_team')
 
 # Combine results
 performance_results = pd.concat([top_5, bottom_5])
 
 performance_results
 
-# Create z-scores for athlete landing forces within their teams
-athlete_team_comparison['z_score'] = athlete_team_comparison.groupby('team')['avg_landing_force_athlete'].transform(
+# Create z-scores for athlete propulsive forces within their teams
+athlete_team_comparison_jh['z_score'] = athlete_team_comparison_jh.groupby('team')['avg_jump_height_athlete'].transform(
     lambda x: stats.zscore(x, nan_policy='omit')
 )
 
-athlete_team_comparison
+athlete_team_comparison_jh

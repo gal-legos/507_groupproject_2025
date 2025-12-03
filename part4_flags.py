@@ -50,10 +50,7 @@ df = pd.read_sql(query, conn)
 # Filter to selected metrics
 selected_metrics = [
     "Jump Height(m)",
-    "Avg. Braking Force(N)",
-    "Avg. Propulsive Force(N)",
-    "Propulsive Phase(s)",
-    "Braking Phase(s)"
+    "Avg. Propulsive Force(N)"
 ]
 
 # Apply filter
@@ -73,32 +70,28 @@ df["decline_flag"] = df["value"] < (df["baseline"] * (1 - JUMP_DECLINE_PCT))
 df["team_mean"] = df.groupby(["team", "metric"])["value"].transform("mean")
 df["team_std"] = df.groupby(["team", "metric"])["value"].transform("std")
 
-# Calculate flag if value is below team mean
+# Flag if value is below team mean minus threshold SD
 df["team_sd_flag"] = df["value"] < (df["team_mean"] - TEAM_LOW_SD * df["team_std"])
 
-# Calculate days since last test for each athlete and metric
+# Days since last test
 last_test = df.groupby(["playername", "metric"])["timestamp"].transform("max")
 df["days_since_test"] = (today - last_test).dt.days
 
-# Flag if days since last test exceeds 30 days
+# Flag if no test in last 30 days
 df["no_test_30_flag"] = df["days_since_test"] > MAX_DAYS
 
-# Combine flags to create a red flag indicator
+# Combine all flags
 df["RED_FLAG"] = (
     df["decline_flag"] |
     df["team_sd_flag"] |
     df["no_test_30_flag"]
 )
 
-# Output red flags to CSV
+# Output only red flags
 red_flags = df[df["RED_FLAG"] == True]
 red_flags.to_csv("athlete_metric_red_flags.csv", index=False)
 
-# Print confirmation message 
-print("Red flag file created: athlete_metric_red_flags.csv")
-
-# Summary of red flags
+# Print summary
 num_players = red_flags["playername"].nunique()
-
-# Print total number of players with red flags
-print(f" Total Players Identified with Red Flags: {num_players}")
+print(f"Red flag file created: athlete_metric_red_flags.csv")
+print(f"Total Players Identified with Red Flags: {num_players}")

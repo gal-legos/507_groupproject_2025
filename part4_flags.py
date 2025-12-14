@@ -60,35 +60,30 @@ df = df[df["metric"].isin(selected_metrics)]
 df["timestamp"] = pd.to_datetime(df["timestamp"])
 df = df.sort_values(["playername", "metric", "timestamp"])
 
+# Keep latest value per player per metric
+latest_df = df.groupby(["playername", "metric"]).last().reset_index()
+
 # Calculate baseline
-df["baseline"] = df.groupby(["playername", "metric"])["value"].transform("first")
+baseline_df = df.groupby(["playername", "metric"])["value"].first().reset_index().rename(columns={"value": "baseline"})
+latest_df = latest_df.merge(baseline_df, on=["playername", "metric"], how="left")
 
-# Calculate flag if value has declined more than 10% threshold from baseline
-df["decline_flag"] = df["value"] < (df["baseline"] * (1 - JUMP_DECLINE_PCT))
 
-# Calculate team mean and std dev for each metric
-df["team_mean"] = df.groupby(["team", "metric"])["value"].transform("mean")
-df["team_std"] = df.groupby(["team", "metric"])["value"].transform("std")
+# Calculate team mean and std (based on all data)
+team_stats = df.groupby(["team", "metric"])["value"].agg(["mean", "std"]).reset_index()
+team_stats = team_stats.rename(columns={"mean": "team_mean", "std": "team_std"})
+latest_df = latest_df.merge(team_stats, on=["team", "metric"], how="left")
 
-# Flag if value is below team mean minus threshold SD
-df["team_sd_flag"] = df["value"] < (df["team_mean"] - TEAM_LOW_SD * df["team_std"])
-
-# Days since last test
-last_test = df.groupby(["playername", "metric"])["timestamp"].transform("max")
-df["days_since_test"] = (today - last_test).dt.days
-
-# Flag if no test in last 30 days
-df["no_test_30_flag"] = df["days_since_test"] > MAX_DAYS
+# Flagging conditions
+latest_df["decline_flag"] = latest_df["value"] < (latest_df["baseline"] * (1 - JUMP_DECLINE_PCT))
+latest_df["team_sd_flag"] = latest_df["value"] < (latest_df["team_mean"] - TEAM_LOW_SD * latest_df["team_std"])
+latest_df["days_since_test"] = (today - latest_df["timestamp"]).dt.days
+latest_df["no_test_30_flag"] = latest_df["days_since_test"] > MAX_DAYS
 
 # Combine all flags
-df["RED_FLAG"] = (
-    df["decline_flag"] |
-    df["team_sd_flag"] |
-    df["no_test_30_flag"]
-)
+latest_df["RED_FLAG"] = latest_df[["decline_flag", "team_sd_flag", "no_test_30_flag"]].any(axis=1)
 
-# Output only red flags
-red_flags = df[df["RED_FLAG"] == True]
+# Output red flags
+red_flags = latest_df[latest_df["RED_FLAG"]]
 red_flags.to_csv("athlete_metric_red_flags.csv", index=False)
 
 # Print summary

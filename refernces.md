@@ -32,6 +32,7 @@ Maniar, N., Schaffer, J., & Kipp, K. (2020). Landing force asymmetries are relat
 McMahon, J. (2024, August 28). Understanding the phases of the countermovement jump: A simplified guide. Hawkin Dynamics. https://www.hawkindynamics.com/blog/phases-of-the-cmj 
 
 McMahon, J. J., Suchomel, T. J., Lake, J. P., & Comfort, P. (2018). Understanding the key phases of the countermovement jump force-time curve. Strength and Conditioning Journal, 40(4), 96–106. https://doi.org/10.1519/SSC.0000000000000375 
+
 Merrigan JJ, Stone JD, Hornsby WG, Hagen JA. Identifying Reliable and Relatable Force-Time Metrics in Athletes-Considerations for the Isometric Mid-Thigh Pull and Countermovement Jump. Sports (Basel). 2020;9(1):4. Published 2020 Dec 31. doi:10.3390/sports9010004
 
 Sole, C. J., Mizuguchi, S., Sato, K., Moir, G. L., & Stone, M. H. (2018). Phase characteristics of the countermovement jump force-time curve: A comparison of athletes by jumping ability. Journal of Strength and Conditioning Research, 32(4), 1155–1165. https://doi.org/10.1519/jsc.0000000000001945 

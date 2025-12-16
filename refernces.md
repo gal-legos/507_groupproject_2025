@@ -5,6 +5,7 @@ Bishop C, Turner A, Jordan M, et al.. A Framework to Guide Practitioners for Sel
 Bygate-Smith, M. K., Beaven, C. M., & Drury, M. (2025). Physical and biomechanical relationships with countermovement jump performance in team sports: Implications for Athletic Development and Injury Risk. Sports, 13(8), 277. https://doi.org/10.3390/sports13080277 
 
 Cormie, P., McBride, J. M., & McCaulley, G. O. (2009). Power-time, force-time, and velocity-time curve analysis of the countermovement jump: impact of training. Journal of strength and conditioning research, 23(1), 177–186. https://doi.org/10.1519/JSC.0b013e3181889324
+
 Coviello K. Vertical Jump | EBSCO. EBSCO Information Services, Inc. | www.ebsco.com. Published 2023. https://www.ebsco.com/research-starters/health-and-medicine/vertical-jump 
 
 Donahue PT, Peel SA, Rush M, et al. Examining Countermovement Jump Strategies Between Women's NCAA Division I Sports. J Strength Cond Res. 2023;37(10):2052-2057. doi:10.1519/JSC.0000000000004505

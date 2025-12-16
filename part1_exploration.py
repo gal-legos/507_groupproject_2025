@@ -11,8 +11,8 @@ import numpy as np
 from scipy import stats 
 
 
-load_dotenv('test.env')
-load_dotenv('test.env', override=True)
+load_dotenv()
+load_dotenv('', override=True)
 
 sql_username = os.getenv('DB_USER')
 sql_password = os.getenv('DB_PASSWORD')

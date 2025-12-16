@@ -8,7 +8,7 @@ description needed here
 #### Huma Babar
 
 #### Patrick Brennan
-Responsible for creating and fixing errors in the part2_cleaning.py file and participated in checking the part1_exploration.py file. Researched and gathered sources regarding the propulsive phase(s) metric, wrote the portion of the literatture review regarding the metric. Finally, wrote the methods section of the synthesis paper and created extra tables using scatter plots for the presentation (outside scope of project assignment).
+
 #### Avion Christie
 
 #### Emily Gallegos
@@ -28,44 +28,26 @@ The sports analytics project followed this folder structure, with the adjustment
 
 ```
 507_groupproject_2025/
-├──  507_presentation.pdf
-├──  README.md
-├──  athlete_metric_red_flags.csv
-├──  part1_exploration.py
-├──  part1_summary.pdf
-├──  part2_cleaning.py
-├──  part3_viz_comparison.ipynb
-├──  part3_viz_dashboard.ipynb
-├──  part3_viz_individual.ipynb
-├──  part4_flags.py
-├──  refernces.md
-├──  requirements.txt
-├──  screenshots
-├──  literature_review.pdf
-├──  part4_research_synthesis.pdf
-├── 🖼️ ezzah_access.jpeg
-├── 🖼️ huma_access.png
-├── 🖼️ patrick_access.png
-├── 📄 test.env
+├── 507_presentation.pdf
+├── README.md
+├── athlete_metric_red_flags.csv
+├── part1_exploration.py
+├── part1_summary.pdf
+├── part2_cleaning.py
+├── part3_viz_comparison.ipynb
+├── part3_viz_dashboard.ipynb
+├── part3_viz_individual.ipynb
+├── part4_flags.py
+├── refernces.md
+├── requirements.txt
+├── screenshots
+├── literature_review.pdf
+├── part4_research_synthesis.pdf
+├── 
+├── 
+├── 
+├── 
 
 ```
 
 
-├── README.md (with group member names, roles, and contributions)
-├── references.md (full bibliography in APA or similar format)
-├── .env.example (template for database credentials - DO NOT include
-actual credentials)
-├── .gitignore (exclude .env, data files, etc.)
-├── part1_exploration.py
-├── part1_summary.pdf
-├── part1_literature_review.pdf (NEW - your metric selection and lit
-review)
-├── part2_cleaning.py
-├── part3_viz_individual.ipynb
-├── part3_viz_comparison.ipynb
-├── part4_flags.py
-├── part4_flagged_athletes.csv
-├── part4_flag_justification.pdf (NEW - explain your thresholds)
-├── part4_research_synthesis.pdf (NEW - replaces sport_analysis.pdf)
-└── final_presentation.pdf
-'''

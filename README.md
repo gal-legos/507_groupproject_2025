@@ -20,16 +20,25 @@ Responsible for the part3_viz_dashboard and part3_viz_comparison notebook files.
 ## Setup Instructions (How to install dependencies)
 1. Create a GitHub Repository
 2. Set up a virtual environment (cmd+shift+P on Mac)
-3. Either manually input dependencies or use the command 'pip3 install -r requirements.txt' to install dependencies from the requirements file.
-4. Add the virtual environment to the gitignore file.
+3. Either manually input dependencies or use the command 'pip3 install -r requirements.txt' to install dependencies from the requirements file
+4. Add the virtual environment to the gitignore file
 5. Configure environment variables
-6. Ensure no secrets are being committed to the repository. 
+6. Ensure no secrets are being committed to the repository 
 
 
 ## Database connection instructions 
-1. Use the .env.examle file to copy and paste the database connection structure.  
+1. Use the .env.example file to copy and paste the database connection structure  
 2. Fill in database credentials 
-3. 
+4. Use a connection string to connect to the MySQL Database using SQLAlchemy
+ "from sqlalchemy import create_engine
+import pandas as pd
+import os
+
+engine = create_engine(
+    f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
+)"
+
 
 
 ## How to run each script 

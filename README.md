@@ -25,16 +25,34 @@ Responsible for the part3_viz_dashboard and part3_viz_comparison notebook files.
 5. Configure environment variables
 6. Ensure no secrets are being committed to the repository. 
 
-## How to run each script 
-script running steps needed 
 
 ## Database connection instructions 
 1. Use the .env.examle file to copy and paste the database connection structure.  
 2. Fill in database credentials 
 3. 
 
+
+## How to run each script 
+### Part 1 
+1. Open a new terminal 
+2. Type 'python part1_exploration.py' into the terminal 
+3.  
+
+### Part 2 
+1. 
+
+
+### Part 3 
+2. 
+
+
+### Part 4 
+3. 
+
+
+
 ## Project Structure overview
-The sports analytics project followed the assignment folder structure that was provided to us in the project guidelines. Our project structure was adjusted and included splitting up the dashboard and comparison portion of part 3, as shown below.
+The sports analytics project used the folder structure provided in the assignment guidelines, with slight modifications. Specifically, the dashboard and comparison components of Part 3 were separated, as shown below.
 
 ```
 507_groupproject_2025/

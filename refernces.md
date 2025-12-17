@@ -12,19 +12,19 @@ Donahue PT, Peel SA, Rush M, et al. Examining Countermovement Jump Strategies Be
 
 Dos’Santos, T., Thomas, C., Comfort, P., & Jones, P. A. (2018). The role of the penultimate foot contact during change of direction: Implications on performance and injury risk. Journal of Strength and Conditioning Research, 32(11), 3031–3040. https://doi.org/10.1519/JSC.0000000000002720
 
+Dos’Santos, T., Thomas, C., Comfort, P., & Jones, P. A. (2018). The effect of angle and velocity on change of direction biomechanics: an angle-velocity trade-off. *Sports Medicine, 48*(10), 2235-2253. https://pubmed.ncbi.nlm.nih.gov/30128715/
+
 Eythorsdottir I, Øyvind Gløersen, Rice H, et al. The battle of the equations: A systematic review of jump height calculations using force platforms. Sports Medicine. 2024;54(11). doi:https://doi.org/10.1007/s40279-024-02098-x 
 
 Haag, E. L., & Weyand, P. G. (2025). Sex performance differences in vertical and horizontal jumping. Royal Society Open Science, 12(9). https://doi.org/10.1098/rsos.241920 
 
 Harper, D. J., & Kiely, J. (2018). Damaging nature of decelerations: Do we adequately prepare players? BMJ Open Sport & Exercise Medicine, 4(1), e000379. https://doi.org/10.1136/bmjsem-2018-000379
 
+Harper, D. J., McBurnie, A., McLean, B., et al. (2022). Biomechanical and neuromuscular demands of horizontal deceleration in sport: implications for performance and injury risk. *Sports Medicine*. https://pubmed.ncbi.nlm.nih.gov/35643876/ 
+
 Harper, D. J., Cohen, D. D., Carling, C., & Kiely, J. (2020). Can countermovement jump neuromuscular performance qualities differentiate maximal horizontal deceleration ability in team sport athletes? Sports, 8(6), 76. https://doi.org/10.3390/sports8060076
 
 Hori, N., Newton, R. U., Andrews, W. A., Kawamori, N., McGuigan, M. R., & Nosaka, K. (2008). Does performance of hang power clean differentiate performance of jumping, sprinting, and changing of direction?. Journal of strength and conditioning research, 22(2), 412–418. https://doi.org/10.1519/JSC.0b013e318166052b
-
-Jones, P. A., Thomas, C., Dos’Santos, T., & McMahon, J. J. (2017). Reliability and usefulness of eccentric strength measures for assessing change of direction ability. Journal of Strength and Conditioning Research, 31(5), 1353–1361. https://doi.org/10.1519/JSC.0000000000001556
-
-Johnston, R., Wattie, N., Schorer, J., & Baker, J. (2018). A systems model of agility performance. International Journal of Sports Science & Coaching, 13(6), 1344–1355. https://doi.org/10.1177/1747954118798055
 
 Ma S, Xu Y, Xu S. Effects of Physical Training Programs on Healthy Athletes’ Vertical Jump Height: A Systematic Review With Meta-Analysis. Journal of Sports Science and Medicine. 2025;24:236-257. doi:https://doi.org/10.52082/jssm.2025.236
 

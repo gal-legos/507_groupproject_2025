@@ -1,7 +1,6 @@
 # 507 Group Project 
-This project analyzes real-world collegiate athletics performance data using Python, SQL, and data visualization techniques. The dataset integrates metrics from three athlete monitoring systems—Hawkins force plates, Kinexon GPS/accelerometry, and Vald strength testing—into a single relational database.
+This project analyzes real-world collegiate athletics performance data using Python, SQL, and data visualization techniques. The dataset integrates metrics from three athlete monitoring systems—Hawkins force plates, Kinexon GPS/accelerometry, and Vald strength testing—into a single relational database. The goal of this project is to explore, clean, transform, and analyze longitudinal performance data to answer a research-driven question grounded in sports science literature and to translate findings into practical performance-monitoring tools for coaches and trainers.
 
-The goal of this project is to explore, clean, transform, and analyze longitudinal performance data to answer a research-driven question grounded in sports science literature, and to translate findings into practical performance-monitoring tools for coaches and trainers.
 
 ## Team member names and roles 
 
@@ -32,6 +31,7 @@ script running steps needed
 ## Database connection instructions 
 1. Use the .env.examle file to copy and paste the database connection structure.  
 2. Fill in database credentials 
+3. 
 
 ## Project Structure overview
 The sports analytics project followed the assignment folder structure that was provided to us in the project guidelines. Our project structure was adjusted and included splitting up the dashboard and comparison portion of part 3, as shown below.

@@ -8,7 +8,7 @@ description needed here
 #### Huma Babar
 
 #### Patrick Brennan
-
+Responsible for creating and fixing errors in the part2_cleaning.py file and participated in checking the part1_exploration.py file. Researched and gathered sources regarding the propulsive phase(s) metric, wrote the portion of the literatture review regarding the metric. Finally, wrote the methods section of the synthesis paper and created extra tables using scatter plots for the presentation (outside scope of project assignment).
 #### Avion Christie
 
 #### Emily Gallegos

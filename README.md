@@ -8,7 +8,7 @@ This project analyzes real-world collegiate athletics performance data using Pyt
 Responsible for writing the Introduction section of the literature review and contributing to the background synthesis of performance monitoring concepts. Developed the `part3_viz_individual.ipynb` notebook to visualize individual athlete longitudinal performance trends across multiple metrics. Contributed to the literature review and results interpretation related to the Average Propulsive Force metric. Additionally, assisted with coordinating meeting times and communication among group members to support collaboration and timely project completion.
 
 #### Huma Babar
-Responsible for developing `part1_exploration.py` and creating `part1_summary.pdf`. Also responsible for analyzing Jump Height (m) data and conducting background research to support the literature review and research report. Additionally, wrote the results section of the final report and coordinated meeting times with group members to support collaboration and project completion. 
+Responsible for developing `part1_exploration.py`,`part1_summary.pdf`,`part4_flags.py` and `part4_flag_justification.pdf`. Also responsible for analyzing Jump Height (m) data and conducting background research to support the literature review and research report. Additionally, wrote the results section of the final report and coordinated meeting times with group members to support collaboration and project completion. Also contributed to the README.md file by adding in key details of the project set up/instructions. 
 
 #### Patrick Brennan
 Responsible for creating and fixing errors in the `part2_cleaning.py` file and participated in checking the `part1_exploration.py` file. Researched and gathered sources regarding the propulsive phase(s) metric, wrote the portion of the literatture review regarding the metric. Finally, wrote the methods section of the synthesis paper and created extra tables using scatter plots for the presentation (outside scope of project assignment).
@@ -54,9 +54,11 @@ conn = create_engine(url_string)
 
 ## How to run each script 
 ### Part 1 
-1. Place proper .env variable in 'load_dotenv()'
-2. Ensure the required dependencies are loaded
-3. Run 'python `part1_exploration.py` in the terminal  
+1. Place the proper .env variable in 'load_dotenv()'
+2. Ensure the required dependencies are installed
+3. Load all the necessary libraries
+4. Establish connection to database
+5. Run 'python `part1_exploration.py` in the terminal  
 
 ### Part 2 
 1. Set up .env with proper variables

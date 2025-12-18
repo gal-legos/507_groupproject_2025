@@ -5,6 +5,7 @@ This project analyzes real-world collegiate athletics performance data using Pyt
 ## Team member names and roles 
 
 #### Ezzah Asad
+Responsible for writing the Introduction section of the literature review and contributing to the background synthesis of performance monitoring concepts. Developed the `part3_viz_individual.ipynb` notebook to visualize individual athlete longitudinal performance trends across multiple metrics. Contributed to the literature review and results interpretation related to the Average Propulsive Force metric. Additionally, assisted with coordinating meeting times and communication among group members to support collaboration and timely project completion.
 
 #### Huma Babar
 Responsible for developing `part1_exploration.py` and creating `part1_summary.pdf`. Also responsible for analyzing Jump Height (m) data and conducting background research to support the literature review and research report. Additionally, wrote the results section of the final report and coordinated meeting times with group members to support collaboration and project completion. 
@@ -69,7 +70,17 @@ If running specific sections
 
 
 ### Part 3 
-2. 
+1. Place the proper .env file path in load_dotenv()
+2. Ensure all required environment variables are defined (DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_TABLE)
+3. Install required dependencies if not already installed
+4. Import all necessary libraries and modules
+5. Establish a database connection using SQLAlchemy
+6. Define the list of performance metrics to be analyzed
+7. Load metric-specific data from the database into pandas DataFrames
+8. Combine all metrics into a single dataset for analysis
+9. Identify the athlete with the highest number of recorded tests
+10. Generate longitudinal time-series plots with rolling averages
+11. Run python part3_visualization.py in the terminal
 
 
 ### Part 4 

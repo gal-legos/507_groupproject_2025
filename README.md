@@ -84,8 +84,16 @@ If running specific sections
 
 
 ### Part 4 
-3. 
-
+1. Place the proper .env file path in load_dotenv().
+2. Make sure all required environment variables are defined
+(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME).
+3. Install required dependencies if not already installed.
+4. Establish a database connection using SQLAlchemy.
+5. Query the cleaned performance data from the MySQL database.
+6. Filter to the selected performance metrics.
+7. Apply baseline, team standard deviation, and recency-based flagging logic.
+8. Generate the red flag output file.
+9. Run python part4_flags.py in the terminal.
 
 
 ## Project Structure overview

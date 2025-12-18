@@ -41,13 +41,13 @@ datetime`
 2. Fill in database credentials 
 4. Use a connection string to connect to the MySQL Database using SQLAlchemy
 
-```from sqlalchemy import create_engine
+from sqlalchemy import create_engine
 import pandas as pd
 import os
 
 url_string = f"mysql+pymysql://{sql_username}:{sql_password}@{sql_host}:3306/{sql_database}"
 
-conn = create_engine(url_string)```
+conn = create_engine(url_string)
 
 
 

@@ -82,7 +82,7 @@ If running specific sections
 8. Combine all metrics into a single dataset for analysis
 9. Identify the athlete with the highest number of recorded tests
 10. Generate longitudinal time-series plots with rolling averages
-11. Run python part3_visualization.py in the terminal
+11. Run python `part3_visualization.py` in the terminal
 
 
 ### Part 4 
@@ -95,7 +95,7 @@ If running specific sections
 6. Filter to the selected performance metrics.
 7. Apply baseline, team standard deviation, and recency-based flagging logic.
 8. Generate the red flag output file.
-9. Run python part4_flags.py in the terminal.
+9. Run python `part4_flags.py` in the terminal.
 
 
 ## Project Structure overview

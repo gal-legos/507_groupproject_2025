@@ -1,0 +1,14 @@
+Overview
+The purpose of this flagging system is to identify athletes who may be experiencing declines in performance, deviations from team norms, or delays in testing. Thresholds were selected based on findings from the current analysis and supported by existing literature on vertical jump performance and force production. The goal of the system is early identification of potential risk injury and potential decline in performance. 
+
+Baseline Decline Threshold (10%)
+A 10% decline from baseline was selected to identify athlete performance reductions. Jump height is widely used as a global indicator of lower-body neuromuscular performance and has been shown to respond consistently to training exercises (Ma et al., 2025). In the present analysis, average braking force and propulsive force demonstrated moderate relationships with jump height (R² = 0.34–0.48), while shorter braking and propulsive phase durations were not significantly associated with jump height (R² < 0.01). 
+Because force production plays the biggest role in jump height performance, a 10% drop in jump height likely means the athlete is producing less force. This cutoff helps avoid flagging normal day-to-day changes while still catching important issues like fatigue, poor recovery, or early injury risk. We can use this to track if athletes have improved post baseline performance or have a reduction in athletic performance. 
+
+Team Standard Deviation Threshold (1.5 SD Below Team Mean)
+The 1.5 standard deviations below the team mean threshold was chosen to identify athletes performing worse than expected compared to their teammates. Team-based comparisons are particularly important given that our results showed that male and female basketball teams demonstrated significantly different force production capacities and jump heights (p < 0.001), as consistent with prior literature (Cormie et al., 2009; Hori et al., 2008). A 1.5 SD threshold is commonly used in analytics to identify meaningful deviations without excessively flagging athletes who are simply below average. 
+
+Time Since Last Test Threshold (30 Days)
+A 30-day threshold since the last test was implemented to flag athletes whose data may no longer reflect current athletic status. Regular monitoring is critical for interpreting force and jump metrics accurately. Extended gaps in testing reduce the ability to detect true performance changes and may indicate scheduling issues, reduced compliance, or injury-related absence. This can also help support athletes early on if we see a decrease in their performance. 
+Combined Flag Logic
+A red flag is created when any of the three conditions: baseline decline, below team average, or greater than 30 day absence from testing are met. Given the evidence that force-related declines can meaningfully impact jump performance and potentially increase injury risk (Dos’Santos et al., 2018; Harper & Kiely, 2018), early identification is crucial for athletic success.

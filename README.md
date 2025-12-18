@@ -25,20 +25,29 @@ Responsible for developing the `part3_viz_dashboard` and `part3_viz_comparison` 
 4. Add the virtual environment to the gitignore file
 5. Configure environment variables
 6. Ensure no secrets are being committed to the repository 
-
+Required Dependencies 
+`sqlalchemy
+pandas
+pymysql
+dotenv
+seaborn
+matplotlib
+numpy
+scipy
+datetime`
 
 ## Database connection instructions 
 1. Use the .env.example file to copy and paste the database connection structure  
 2. Fill in database credentials 
 4. Use a connection string to connect to the MySQL Database using SQLAlchemy
- "from sqlalchemy import create_engine
+
+```from sqlalchemy import create_engine
 import pandas as pd
 import os
 
-engine = create_engine(
-    f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
-    f"@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
-)"
+url_string = f"mysql+pymysql://{sql_username}:{sql_password}@{sql_host}:3306/{sql_database}"
+
+conn = create_engine(url_string)```
 
 
 

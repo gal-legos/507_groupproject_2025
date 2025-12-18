@@ -8,7 +8,7 @@ This project analyzes real-world collegiate athletics performance data using Pyt
 Responsible for writing the Introduction section of the literature review and contributing to the background synthesis of performance monitoring concepts. Developed the `part3_viz_individual.ipynb` notebook to visualize individual athlete longitudinal performance trends across multiple metrics. Contributed to the literature review and results interpretation related to the Average Propulsive Force metric. Additionally, assisted with coordinating meeting times and communication among group members to support collaboration and timely project completion.
 
 #### Huma Babar
-Responsible for developing `part1_exploration.py`,`part1_summary.pdf`,`part4_flags.py` and `part4_flag_justification.pdf`. Also responsible for analyzing Jump Height (m) data and conducting background research to support the literature review and research report. Additionally, wrote the results section of the final report and coordinated meeting times with group members to support collaboration and project completion. 
+Responsible for developing `part1_exploration.py`,`part1_summary.pdf`,`part4_flags.py` and `part4_flag_justification.pdf`. Also responsible for analyzing Jump Height (m) data and conducting background research to support the literature review and research report. Additionally, wrote the results section of the final report and coordinated meeting times with group members to support collaboration and project completion. Also contributed to the README.md file by adding in key details of the project set up/instructions. 
 
 #### Patrick Brennan
 Responsible for creating and fixing errors in the `part2_cleaning.py` file and participated in checking the `part1_exploration.py` file. Researched and gathered sources regarding the propulsive phase(s) metric, wrote the portion of the literatture review regarding the metric. Finally, wrote the methods section of the synthesis paper and created extra tables using scatter plots for the presentation (outside scope of project assignment).
@@ -17,7 +17,7 @@ Responsible for creating and fixing errors in the `part2_cleaning.py` file and p
 Responsible for selecting and analyzing the Average Braking Force metric and helping develop the data cleaning and flagging logic used in the project. Wrote and tested Python code in Google Colab to filter athlete data, calculate individual baselines, compare performance to team averages, and identify potential performance flags. When some metrics did not consistently appear across environments, worked with teammates to adapt the analysis to the finalized group code. Also contributed to the written report by writing the Average Braking Force literature section and the Limitations section, focusing on data constraints and interpretation, as well as helping explain performance monitoring and flagging results in the slides.
 
 #### Emily Gallegos
-Responsible for developing the `part3_viz_dashboard` and `part3_viz_comparison` Jupyter notebooks. Additional responsibilities included contributing to the Results section of the Sports Analytics presentation and the Discussion section of the research synthesis paper. This role also involved researching the Braking Phase (s) metric and collecting relevant sources for both the literature review and synthesis paper. Minor contributions included compiling the Part 1 summary and screenshots into a single, reader-friendly PDF, as well as uploading the final synthesis paper and literature review PDFs to the GitHub repository. 
+Responsible for developing the `part3_viz_dashboard` and `part3_viz_comparison` Jupyter notebooks. Additional responsibilities included contributing to the Results section of the Sports Analytics presentation and the Discussion section of the research synthesis paper. This role also involved researching the Braking Phase (s) metric and collecting relevant sources for both the literature review and synthesis paper. Minor contributions included compiling the Part 1 summary and screenshots into a single, reader-friendly PDF, as well as uploading the final synthesis paper and literature review PDFs to the GitHub repository. Also contributed to the README.md file by adding in key details of the project set up/instructions. 
 
 ## Setup Instructions (How to install dependencies)
 1. Create a GitHub Repository
@@ -84,8 +84,9 @@ If running specific sections
 
 
 ### Part 4 
-3. 
-
+1. Place proper .env variable in 'load_dotenv()'
+2. Ensure the required dependencies are loaded
+3. Run 'python `part4_flags.py` in the terminal  
 
 
 ## Project Structure overview

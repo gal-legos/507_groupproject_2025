@@ -17,7 +17,7 @@ Responsible for creating and fixing errors in the `part2_cleaning.py` file and p
 Responsible for selecting and analyzing the Average Braking Force metric and helping develop the data cleaning and flagging logic used in the project. Wrote and tested Python code in Google Colab to filter athlete data, calculate individual baselines, compare performance to team averages, and identify potential performance flags. When some metrics did not consistently appear across environments, worked with teammates to adapt the analysis to the finalized group code. Also contributed to the written report by writing the Average Braking Force literature section and the Limitations section, focusing on data constraints and interpretation, as well as helping explain performance monitoring and flagging results in the slides.
 
 #### Emily Gallegos
-Responsible for developing the `part3_viz_dashboard` and `part3_viz_comparison` Jupyter notebooks. Additional responsibilities included contributing to the Results section of the Sports Analytics presentation and the Discussion section of the research synthesis paper. This role also involved researching the Braking Phase (s) metric and collecting relevant sources for both the literature review and synthesis paper. Minor contributions included compiling the Part 1 summary and screenshots into a single, reader-friendly PDF, as well as uploading the final synthesis paper and literature review PDFs to the GitHub repository. Also contributed to the README.md file by adding in key details of the project set up/instructions. 
+Responsible for developing the `part3_viz_dashboard` and `part3_viz_comparison` Jupyter notebooks. Additional responsibilities included contributing to the Results section of the Sports Analytics presentation and the Discussion section of the research synthesis paper. This role also involved researching the Braking Phase (s) metric and collecting relevant sources for both the literature review and synthesis paper. Minor contributions included compiling the Part 1 summary and screenshots into a single, reader-friendly PDF, as well as uploading the final synthesis paper and literature review PDFs to the GitHub repository. 
 
 ## Setup Instructions (How to install dependencies)
 1. Create a GitHub Repository
@@ -54,9 +54,11 @@ conn = create_engine(url_string)
 
 ## How to run each script 
 ### Part 1 
-1. Place proper .env variable in 'load_dotenv()'
-2. Ensure the required dependencies are loaded
-3. Run 'python `part1_exploration.py` in the terminal  
+1. Place the proper .env variable in 'load_dotenv()'
+2. Ensure the required dependencies are installed
+3. Load all the necessary libraries
+4. Establish connection to database
+5. Run 'python `part1_exploration.py` in the terminal  
 
 ### Part 2 
 1. Set up .env with proper variables

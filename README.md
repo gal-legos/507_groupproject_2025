@@ -48,7 +48,14 @@ engine = create_engine(
 3.  
 
 ### Part 2 
-1. 
+1. Set up .env with proper variables
+2. Install modules from requirements.txt
+If running whole file
+3. Run part2_cleaning.py in terminal
+If running specific sections
+3. Import all dependencies
+4. Establish connection to database
+5. Run necessary code from top to bottom, ensuring all previous requirements are defined (strings, lists, dictionaries)
 
 
 ### Part 3 
